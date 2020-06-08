@@ -1,0 +1,19 @@
+<style>
+.jumbotron {
+        background-color: white;
+}
+</style>
+<div class="container">
+    <div id="header" class="jumbotron">
+        <h1><span class="py">KTP</span>Poker</h1>
+        <hr/>
+        <h2>Indentify yourself and have fun!</h2>
+        <div>
+            {% for user in users %}
+            <a href="test-login?player-name={{ user }}">
+                <img width="75" src="/static/users/{{ user }}.png">
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

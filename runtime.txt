@@ -1,0 +1,4 @@
+# python-2.7.11
+
+python texasholdem_poker_service.py
+gunicorn -k flask_sockets.worker client_web:app

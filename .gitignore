@@ -1,0 +1,6 @@
+*.pyc
+.idea
+env.sh
+.DS_Store
+dump.rdb
+static/.DS_Store
