@@ -1,20 +1,20 @@
-from poker import GameServerRedis, GameRoomFactory, HoldemPokerGameFactory
-from poker.game_persistence import MongoGameSubscriber
-import pymongo
+from poker import GameSubscriber, GameServerRedis, GameRoomFactory, HoldemPokerGameFactory
 import logging
 import redis
 import os
+
+
+class CustomGameSubscriber(GameSubscriber):
+
+    def game_event(self, event, event_data):
+        print(event, event_data)
 
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG if 'DEBUG' in os.environ else logging.INFO)
     logger = logging.getLogger()
 
-    redis_url = os.environ["REDIS_URL"]
-    redis = redis.from_url(redis_url)
-
-    # mongo_url = os.environ["MONGODB_URL"]
-    # mongo_db = pymongo.MongoClient(mongo_url).get_default_database()
+    redis = redis.from_url('127.0. 0.1:6379')
 
     server = GameServerRedis(
         redis=redis,
@@ -26,8 +26,7 @@ if __name__ == '__main__':
                 small_blind=20.0,
                 logger=logger,
                 game_subscribers=[
-                    # Uncomment the following line to save game events to a games collection
-                    # MongoGameSubscriber(mongo_db)
+                    CustomGameSubscriber()
                 ]
             )
         ),

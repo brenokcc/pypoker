@@ -1,11 +1,8 @@
 import gevent
 from flask import Flask, render_template, redirect, session, request, url_for
 from flask_sockets import Sockets
-from flask_oauthlib.client import OAuth, OAuthException
-import random
 import redis
 import uuid
-import os
 from poker import ChannelWebSocket, PlayerClientConnector, Player, ChannelError, MessageFormatError, MessageTimeout
 
 
@@ -14,10 +11,8 @@ app.config["SECRET_KEY"] = "!!_-pyp0k3r-_!!"
 app.debug = True
 
 sockets = Sockets(app)
-oauth = OAuth(app)
 
-redis_url = os.environ["REDIS_URL"]
-redis = redis.from_url(redis_url)
+redis = redis.from_url('127.0. 0.1:6379')
 
 
 @app.route("/")

@@ -7,7 +7,6 @@ from .channel_redis import MessageQueue, ChannelRedis, RedisListener, RedisPubli
 from .channel_websocket import ChannelWebSocket
 from .poker_game import *
 from .poker_game_holdem import HoldemPokerGameFactory, HoldemPokerGame
-from .poker_game_traditional import TraditionalPokerGameFactory, TraditionalPokerGame
 from .game_room import GameRoom, GameRoomFactory, FullGameRoomException
 from .player import Player
 from .player_server import PlayerServer

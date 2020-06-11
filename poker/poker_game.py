@@ -183,21 +183,6 @@ class GamePlayers:
                 yield self._players[player_id]
         raise StopIteration
 
-    # def rounder(self, start_player_id):
-    #     def decorator(action):
-    #         def perform():
-    #             start_item = self._player_ids.index(start_player_id)
-    #             try:
-    #                 while True:
-    #                     player_id = self._player_ids[start_item]
-    #                     if player_id not in self._folder_ids:
-    #                         action(self._players[player_id])
-    #                     start_item = (start_item + 1) % len(self._player_ids)
-    #             except StopIteration:
-    #                 pass
-    #         return perform
-    #     return decorator
-
     def get(self, player_id):
         try:
             return self._players[player_id]
@@ -533,7 +518,7 @@ class GameBetHandler:
 
 class PokerGame:
     TIMEOUT_TOLERANCE = 2
-    BET_TIMEOUT = 30
+    BET_TIMEOUT = 60*10
 
     WAIT_AFTER_CARDS_ASSIGNMENT = 1
     WAIT_AFTER_BET_ROUND = 1

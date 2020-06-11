@@ -1,19 +1,11 @@
 <div class="container" id="game-wrapper">
     <h1>KTP Poker</h1>
+    <div class="pull-right"><a href="/test-logout">Logout</a></div>
     <div class="row">
-        <div id="table-wrapper" class="col-sm-8">
-            <div id="players"></div>
 
-            <div id="table">
-                <div class="game-info">
-                    <div id="pots"></div>
-                    <div id="shared-cards"></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="current-player-wrapper" class="col-sm-4">
+        <div id="current-player-wrapper" class="col-sm-12 col-lg-4" style="min-height:200px">
             <h4>Hi {{player_name}}!</h4>
+
 
             <div id="game-status" class="hidden">
                 <p data-key="4"></p>
@@ -22,9 +14,6 @@
                 <p data-key="1"></p>
                 <p data-key="0"></p>
             </div>
-
-            <p>Enjoy your poker game :)</p>
-            <p><a href="/test-logout">Logout!</a></p>
 
             <div id="current-player" class="player">
                 <div class="cards"></div>
@@ -53,5 +42,17 @@
                 </div>
             </div>
         </div>
+
+        <div id="table-wrapper" class="col-sm-12 col-lg-8">
+            <div id="players"></div>
+
+            <div id="table">
+                <div class="game-info">
+                    <div id="pots"></div>
+                    <div id="shared-cards"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
